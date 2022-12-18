@@ -51,7 +51,7 @@
 
 /* USER CODE BEGIN PV */
 volatile uint16_t adcBuffer[ADC_CNANNELS];
-volatile uint8_t countADC_bufferN = 0;
+volatile uint32_t countADC_bufferN = 0;
 char txBufferUART[UART_BUFFER_LEN];
 /* USER CODE END PV */
 
@@ -70,12 +70,12 @@ void getADC_data(void){
 
 void printUART(void){
 	txBufferUART[0] = '\0';
-	sprintf(txBufferUART,"%d,",countADC_bufferN);
+	sprintf(txBufferUART,"%ld,",countADC_bufferN);
 	for(int i = 0; i < ADC_CNANNELS; i++){
 		if(i < ADC_CNANNELS - 1 )
 			sprintf(&txBufferUART[strlen(txBufferUART)],"%d,",adcBuffer[i]);
 		else
-			sprintf(&txBufferUART[strlen(txBufferUART)],"%d\r\n",adcBuffer[i]);
+			sprintf(&txBufferUART[strlen(txBufferUART)],"%d\n",adcBuffer[i]);
 	}
 	if(HAL_UART_Transmit_DMA(&huart1, (uint8_t *)txBufferUART, strlen(txBufferUART)) != HAL_OK)
 		Error_Handler();
