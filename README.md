@@ -1,5 +1,5 @@
 # STM32F030_MEASURE_ADC
-STM32F030 UART DMA TX (9600) values of all 16 ADC channels every 1 second. Non blocking, NORTOS. CubeIDE
+STM32F030 UART DMA TX (9600) values of all 16 ADC channels (ADC works with DMA also) every 1 second. Non blocking, NORTOS. CubeIDE
 FULL PROJECT ready to compile and your extention!
 	PC0     ------> ADC_IN10
     PC1     ------> ADC_IN11
