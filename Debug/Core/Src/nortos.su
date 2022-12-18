@@ -1,0 +1,4 @@
+../Core/Src/nortos.c:6:6:SimpleF	8	static
+../Core/Src/nortos.c:10:13:pFastQueueIni	8	static
+../Core/Src/nortos.c:15:12:F_push	16	static
+../Core/Src/nortos.c:22:15:F_pull	16	static
